@@ -1,11 +1,10 @@
 package com.example.rickandmorty
 
-import retrofit2.Response
-import retrofit2.http.Path
+import com.example.rickandmorty.Network.NetworkLayer
 
 class SharedRepository {
     suspend fun getCharacterById(characterId:Int): GetCharacterByIdResponse?{
-         val request=NetworkLayer.apiClient.getCharacterById(characterId)
+         val request= NetworkLayer.apiClient.getCharacterById(characterId)
         if(request.failed){
             return null
         }

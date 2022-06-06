@@ -1,7 +1,7 @@
-package com.example.rickandmorty
+package com.example.rickandmorty.Network
 
 
-import retrofit2.Call
+import com.example.rickandmorty.GetCharacterByIdResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

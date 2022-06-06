@@ -1,21 +1,21 @@
-package com.example.rickandmorty
+package com.example.rickandmorty.Network
 
 import retrofit2.Response
 
 data class SimpleResponse<T>(
-    val status:Status,
+    val status: Status,
     val data:Response<T>?,
     val exception:Exception?
 ){
     companion object{
-        fun<T>success(data:Response<T>):SimpleResponse<T>{
+        fun<T>success(data:Response<T>): SimpleResponse<T> {
             return SimpleResponse(
                 status = Status.Success,
                 data=data,
                 exception = null
             )
         }
-        fun<T>failure(exception: Exception):SimpleResponse<T>{
+        fun<T>failure(exception: Exception): SimpleResponse<T> {
             return SimpleResponse(
                 status = Status.Failed,
                 data=null,
@@ -26,12 +26,12 @@ data class SimpleResponse<T>(
 
 
     sealed class Status{
-        object Success:Status()
-        object Failed:Status()
+        object Success: Status()
+        object Failed: Status()
     }
 
     val failed:Boolean
-    get()=this.status==Status.Failed
+    get()=this.status== Status.Failed
 
     val isSuccessful:Boolean
     get()=!failed&&this.data?.isSuccessful==true
