@@ -90,12 +90,14 @@ class CharacterDetailsEpoxyController : EpoxyController() {
         val title: String,
         val description: String
 
-    ) : ViewBindingKotlinModel<ModelCharacterDetailsDataPointBinding>(R.layout.model_character_details_image) {
+    ) : ViewBindingKotlinModel<ModelCharacterDetailsDataPointBinding>(R.layout.model_character_details_data_point) {
         override fun ModelCharacterDetailsDataPointBinding.bind() {
             labelTextView.text = title
             textView.text = description
         }
     }
+
+
 
 
 }
